@@ -1,0 +1,33 @@
+@mixin small {
+  @media only screen and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin medium-small {
+  @media only screen and (max-width: $m) and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin medium-large {
+  @media only screen and (max-width: $lg) and (min-width: $m) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin light {
+  background-color: $white;
+  color: $very-dark-blue-text;
+}
+
+@mixin dark {
+  background-color: $dark-blue;
+  color: $white;
+}

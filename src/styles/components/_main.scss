@@ -1,0 +1,10 @@
+.home {
+  background-color: $very-light-gray;
+  flex: 1;
+  z-index: 0;
+  width: 100%;
+
+  &.dark {
+    background-color: $very-dark-blue-bg;
+  }
+}

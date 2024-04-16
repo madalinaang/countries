@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://madalinaang.github.io/countries",
   "dependencies": {
+    "@ionic/react": "^7.8.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -11,6 +12,8 @@
     "@types/node": "^16.18.96",
     "@types/react": "^18.2.78",
     "@types/react-dom": "^18.2.25",
+    "axios": "^1.6.8",
+    "ionicons": "^7.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",

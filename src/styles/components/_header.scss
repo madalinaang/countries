@@ -1,0 +1,43 @@
+header {
+  padding: 1.5rem 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+  z-index: 2;
+
+  @include light;
+
+  h1 {
+    font-size: 150%;
+    font-weight: $font-weight-extra-bold;
+
+    @include medium-small {
+      font-size: 130%;
+    }
+
+    @include small {
+      font-size: 110%;
+    }
+  }
+
+  .dark-mode {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: $font-weight-semi-bold;
+
+    @include small {
+      gap: 0.1rem;
+    }
+
+    &:hover {
+      opacity: 70%;
+      cursor: pointer;
+    }
+  }
+
+  &.dark {
+    @include dark;
+  }
+}

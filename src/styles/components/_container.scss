@@ -1,0 +1,19 @@
+.container {
+  margin: 3rem 7%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5vw;
+
+  @include medium-large {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include medium-small {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include small {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2.5rem;
+  }
+}

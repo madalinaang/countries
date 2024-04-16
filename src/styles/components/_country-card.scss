@@ -1,0 +1,47 @@
+.country-card {
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include light;
+
+  &.dark {
+    @include dark;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+    margin-bottom: 0;
+
+    h3 {
+      font-size: 110%;
+      font-weight: $font-weight-extra-bold;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .detail {
+        display: flex;
+        gap: 0.5rem;
+
+        h6 {
+          font-weight: $font-weight-semi-bold;
+        }
+      }
+    }
+  }
+}
