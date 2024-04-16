@@ -7,4 +7,122 @@
   &.dark {
     background-color: $very-dark-blue-bg;
   }
+
+  .filter {
+    margin: 3rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include small {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .search-bar {
+      width: 40%;
+      padding: 1rem 2rem;
+      box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+      border-radius: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      @include medium-large {
+        width: 50%;
+      }
+
+      @include medium-small {
+        width: 60%;
+      }
+
+      @include small {
+        width: 100%;
+      }
+
+      @include light;
+
+      &.dark {
+        @include dark;
+      }
+
+      .search-icon {
+        font-size: 120%;
+      }
+
+      input {
+        flex: 1;
+        height: 100%;
+        font-weight: $font-weight-semi-bold;
+
+        &::placeholder {
+          color: $dark-gray;
+          font-weight: $font-weight-light;
+        }
+
+        &.dark::placeholder {
+          font-weight: $font-weight-light;
+          @include dark;
+        }
+
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
+    }
+
+    .dropdown {
+      font-weight: $font-weight-semi-bold;
+      position: relative;
+      text-transform: capitalize;
+      width: 13rem;
+
+      button {
+        padding: 1rem 1.5rem;
+        box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+        border-radius: 0.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @include light;
+
+        &.dark {
+          @include dark;
+        }
+
+        &:hover {
+          color: lighten($very-dark-blue-text, 50%);
+        }
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 0.3rem);
+        left: 0;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+        border-radius: 0.3rem;
+
+        @include light;
+
+        &.dark {
+          @include dark;
+        }
+
+        div {
+          padding: 0.5rem 0;
+
+          &:hover {
+            color: lighten($very-dark-blue-text, 50%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 }

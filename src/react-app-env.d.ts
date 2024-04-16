@@ -15,3 +15,6 @@ interface Country {
   borders: string[];
   flags: { svg : string, alt: string };
 }
+
+
+type Region = "africa" | "america" | "asia" | "europe" | "oceania";

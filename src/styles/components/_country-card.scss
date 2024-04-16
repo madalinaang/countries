@@ -12,6 +12,11 @@
     @include dark;
   }
 
+  &:hover {
+    color: lighten($very-dark-blue-text, 50%);
+    cursor: pointer;
+  }
+
   img {
     width: 100%;
     display: block;
