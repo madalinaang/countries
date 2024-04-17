@@ -1,9 +1,8 @@
-import React from "react";
 import axios from "axios";
 
 export class CountriesData {
   static fields =
-    "name,population,region,subregion,capital,tld,currencies,languages,borders,flags";
+    "name,population,region,subregion,capital,tld,currencies,languages,borders,flags,cca2";
 
   static async fetchAllCountries(): Promise<Country[] | null> {
     try {
@@ -60,5 +59,20 @@ export class CountriesData {
       console.log("Error fetching countries:", error);
       return null;
     }
+  }
+
+  static async getNameByCode(codeStr: string): Promise<string> {
+    let countryName = "";
+
+    try {
+      const foundCountry = await CountriesData.fetchCountryByCode(codeStr);
+      if (foundCountry) {
+        countryName = foundCountry.name.common;
+      }
+    } catch (error) {
+      console.error("Error fetching country by code:", error);
+    }
+
+    return countryName;
   }
 }

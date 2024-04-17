@@ -95,7 +95,7 @@
         }
 
         &:hover {
-          color: lighten($very-dark-blue-text, 50%);
+          opacity: 60%;
         }
       }
 
@@ -118,7 +118,7 @@
           padding: 0.5rem 0;
 
           &:hover {
-            color: lighten($very-dark-blue-text, 50%);
+            opacity: 60%;
             cursor: pointer;
           }
         }

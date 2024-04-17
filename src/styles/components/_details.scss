@@ -1,0 +1,42 @@
+.details {
+  background-color: $very-light-gray;
+  flex: 1;
+  z-index: 0;
+  width: 100%;
+
+  &.dark {
+    background-color: $very-dark-blue-bg;
+  }
+
+  .navigation {
+    margin: 3rem 7% 0 7%;
+
+    @include small {
+      margin-top: 2rem;
+    }
+
+    button {
+      box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+      border-radius: 0.3rem;
+      padding: 0.7rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: $font-size;
+
+      @include light;
+
+      &.dark {
+        @include dark;
+      }
+
+      .arrow-back {
+        font-size: 120%;
+      }
+
+      &:hover {
+        opacity: 60%;
+      }
+    }
+  }
+}

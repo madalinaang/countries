@@ -5,6 +5,7 @@ header {
   justify-content: space-between;
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
   z-index: 2;
+  font-size: $font-size;
 
   @include light;
 
@@ -32,7 +33,7 @@ header {
     }
 
     &:hover {
-      opacity: 70%;
+      opacity: 60%;
       cursor: pointer;
     }
   }

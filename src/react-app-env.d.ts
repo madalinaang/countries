@@ -9,11 +9,12 @@ interface Country {
   region: string;
   subregion: string;
   capital: string[];
-  tld: string;
+  tld: string[];
   currencies: { [key: string]: { name: string } };
   languages: { [key: string]: string };
   borders: string[];
   flags: { svg : string, alt: string };
+  cca2: string;
 }
 
 

@@ -17,7 +17,10 @@ function App() {
       <Header darkMode={darkMode} changeDarkMode={changeDarkMode} />
       <Routes>
         <Route path="/" element={<Main darkMode={darkMode} />} />
-        <Route path="/details" element={<Details />} />
+        <Route
+          path="/details/:countryCode"
+          element={<Details darkMode={darkMode} />}
+        />
       </Routes>
     </HashRouter>
   );

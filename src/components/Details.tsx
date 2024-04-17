@@ -1,27 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { CountriesData } from "../data/CountriesData";
+import CountryDetails from "./CountryDetails";
+import { IonIcon } from "@ionic/react";
+import { arrowBack } from "ionicons/icons";
+import { useNavigate } from "react-router-dom";
 
-const Details: React.FC = () => {
+interface DetailsProps {
+  darkMode?: boolean;
+}
+
+const Details: React.FC<DetailsProps> = ({ darkMode }) => {
+  const { countryCode } = useParams();
+  const [country, setCountry] = useState<Country | null>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    countryCode &&
+      CountriesData.fetchCountryByCode(countryCode).then(
+        (foundCountry: Country | null) => {
+          foundCountry && setCountry(foundCountry);
+        }
+      );
+  }, [countryCode]);
+
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
-    <main className="details">
-      Details
-      {/*      <p>
-        {country.name.common},{" "}
-        {country.name.nativeName &&
-          Object.keys(country.name.nativeName).length > 0 &&
-          country.name.nativeName[Object.keys(country.name.nativeName)[0]] &&
-          country.name.nativeName[Object.keys(country.name.nativeName)[0]]
-            .official}
-        , {country.population}, {country.region}, {country.subregion},
-        {country.capital.join(", ")}, {country.tld},
-        {Object.keys(country.currencies)
-          .map((currency) => country.currencies[currency].name)
-          .join(", ")}
-        ,{" "}
-        {Object.keys(country.languages)
-          .map((language) => country.languages[language])
-          .join(", ")}
-        {country.borders.join(", ")}, {country.flags.png}
-      </p>*/}
+    <main className={"details " + (darkMode && "dark")}>
+      <section className="navigation">
+        <button onClick={handleClick} className={darkMode ? "dark" : ""}>
+          <IonIcon icon={arrowBack} className="arrow-back" />
+          <p>Back</p>
+        </button>
+      </section>
+      {country && <CountryDetails country={country} darkMode={darkMode} />}
     </main>
   );
 };
